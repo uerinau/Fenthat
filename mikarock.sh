@@ -90,10 +90,10 @@ gcloud services enable compute.googleapis.com
 gcloud compute zones list | cut -f 1 -d ' ' | tail -n+2 | shuf > shuffed-regions
 
 firstregion=$(sed '1!d' shuffed-regions)
-secondregion=$(sed '2!d' shuffed-regions)
-thirdregion=$(sed '3!d' shuffed-regions)
-fourthregion=$(sed '4!d' shuffed-regions)
-fifthregion=$(sed '5!d' shuffed-regions)
+secondregion=$(sed '3!d' shuffed-regions)
+thirdregion=$(sed '5!d' shuffed-regions)
+fourthregion=$(sed '7!d' shuffed-regions)
+fifthregion=$(sed '9!d' shuffed-regions)
 
 gcloud compute instances create comp1 \
 --zone=$firstregion \
